@@ -62,7 +62,11 @@ module Cor1440Gen
           # GET /actividades
           # GET /actividades.json
           def index
-            @actividades = Cor1440Gen::ActividadesController.filtra(params)
+            @actividades = Cor1440Gen::ActividadesController.filtra(
+              params[:filtro])
+            @plantillas = Heb412Gen::Plantillahcm.where(
+              vista: 'Actividad').select('nombremenu, id').map { 
+                |c| [c.nombremenu, c.id] }
             @numactividades = @actividades.size
             @enctabla = encabezado_comun()
             respond_to do |format|
@@ -82,6 +86,7 @@ module Cor1440Gen
                 render 'index' 
               }
               format.pdf  { 
+                byebug
                 @cuerpotabla = cuerpo_comun()
                 prawnto(prawn: { page_layout: :landscape },
                 filename: 
@@ -211,6 +216,7 @@ module Cor1440Gen
 
         class_methods do
           def param_escapa(par, p)
+            par.nil? ? '' :
             par[p] ? Sip::Pais.connection.quote_string(par[p].to_s) : 
               par[p.to_sym] ? Sip::Pais.connection.quote_string(par[p.to_sym].to_s) :
               par[p.to_s] ? Sip::Pais.connection.quote_string(par[p.to_s].to_s) :  ''
