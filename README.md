@@ -3,6 +3,8 @@
 
 ![Logo de cor1440](https://raw.githubusercontent.com/pasosdeJesus/cor1440_gen/master/spec/dummy/public/images/logo.jpg)
 
+Esta rama está obsoleta, se mantiene mientras se completa migración
+
 Este es un motor para sistemas de información de planeación y seguimiento de 
 actividades en ONGs. Opera sobre Ruby on Rails 5 y PostgreSQL (preferiblemente 
 cifrado como en adJ).
