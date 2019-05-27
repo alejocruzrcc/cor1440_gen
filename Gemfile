@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Rails (internacionalización)
-gem "rails", '~> 5.2.1'
+gem "rails", '~> 5.2.3'
 
 gem 'bigdecimal'
 
@@ -84,15 +84,15 @@ gem "tzinfo"
 #gem "tzinfo-data", platforms:  [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Motor Sip
-gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
+gem 'sip', git: "https://github.com/pasosdeJesus/sip.git", branch: :rails5
 #gem 'sip', path: '../sip'
 
 # Motor heb412_gen para manejar archivos como nube y plantillas
-gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
+gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git', branch: :rails5
 #gem 'heb412_gen', path: '../heb412_gen/'
 
 # Motor para formularios
-gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git'
+gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git', branch: :rails5
 #gem 'mr519_gen', path: '../mr519_gen/'
 
 
