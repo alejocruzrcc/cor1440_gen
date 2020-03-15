@@ -21,5 +21,8 @@ class AgregaIdActividadProyectofinanciero < ActiveRecord::Migration[6.0]
 
   def down
     remove_column :cor1440_gen_actividad_proyectofinanciero, :id
+    execute <<-SQL
+      DROP SEQUENCE cor1440_gen_actividad_proyectofinanciero_id_seq;
+    SQL
   end
 end
